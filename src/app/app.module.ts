@@ -9,6 +9,8 @@ import { HomeComponent } from './home/home.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ContactComponent } from './contact/contact.component';
+import { SignInComponent } from './sign-in/sign-in.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 
 @NgModule({
@@ -18,7 +20,9 @@ import { ContactComponent } from './contact/contact.component';
     FooterComponent,
     HomeComponent,
     HomeComponent,
-    ContactComponent
+    ContactComponent,
+    SignInComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
