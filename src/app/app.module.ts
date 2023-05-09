@@ -11,6 +11,13 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ContactComponent } from './contact/contact.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { AdminDashComponent } from './Admin/admin-dash/admin-dash.component';
+import { ProfilComponent } from './Admin/profil/profil.component';
+import { ProductComponent } from './Admin/product/product.component';
+import { OrderComponent } from './Admin/order/order.component';
+import { ClientComponent } from './Admin/client/client.component';
+import { AdminNavComponent } from './Admin/admin-nav/admin-nav.component';
+import { AdminNav2Component } from './Admin/admin-nav2/admin-nav2.component';
 
 
 @NgModule({
@@ -22,7 +29,14 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     HomeComponent,
     ContactComponent,
     SignInComponent,
-    SignUpComponent
+    SignUpComponent,
+    AdminDashComponent,
+    ProfilComponent,
+    ProductComponent,
+    OrderComponent,
+    ClientComponent,
+    AdminNavComponent,
+    AdminNav2Component
   ],
   imports: [
     BrowserModule,
