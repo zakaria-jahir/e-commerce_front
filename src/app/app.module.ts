@@ -18,6 +18,8 @@ import { OrderComponent } from './Admin/order/order.component';
 import { ClientComponent } from './Admin/client/client.component';
 import { AdminNavComponent } from './Admin/admin-nav/admin-nav.component';
 import { AdminNav2Component } from './Admin/admin-nav2/admin-nav2.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { PanierComponent } from './panier/panier.component';
 
 
 @NgModule({
@@ -36,7 +38,9 @@ import { AdminNav2Component } from './Admin/admin-nav2/admin-nav2.component';
     OrderComponent,
     ClientComponent,
     AdminNavComponent,
-    AdminNav2Component
+    AdminNav2Component,
+    CheckoutComponent,
+    PanierComponent
   ],
   imports: [
     BrowserModule,

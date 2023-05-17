@@ -9,6 +9,8 @@ import { ProfilComponent } from './Admin/profil/profil.component';
 import { ProductComponent } from './Admin/product/product.component';
 import { OrderComponent } from './Admin/order/order.component';
 import { ClientComponent } from './Admin/client/client.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { PanierComponent } from './panier/panier.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -24,6 +26,8 @@ const routes: Routes = [
   { path: 'admin/product', component:ProductComponent},
   { path: 'admin/order', component:OrderComponent},
   { path: 'admin/client', component:ClientComponent},
+  { path: 'client/checkout', component:CheckoutComponent},
+  { path: 'client/panier', component:PanierComponent},
   
 ];
 
