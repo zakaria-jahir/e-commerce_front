@@ -76,19 +76,20 @@
             </div>
         </div>
         <div class="row property__gallery">
-            <div class="col-lg-3 col-md-4 col-sm-6 mix women">
+            <div class="col-lg-3 col-md-4 col-sm-6 mix women" *ngFor="let product of products">
                 <div class="product__item">
-                    <div class="product__item__pic set-bg" [ngStyle]="{'background' : 'url(assets/product-1.jpg)'}">
+                    <div class="product__item__pic set-bg"
+                        [ngStyle]="{'background': 'url('+'assets/images/products/'+product.pic+')'}">
                         <div class="label new">New</div>
                         <ul class="product__hover">
-                            <li><a href="assets/product-1.jpg" class="image-popup"><span class="arrow_expand"><fa-icon
-                                            [icon]="ex"></fa-icon></span></a></li>
+                            <li><a href="assets/images/products/p.jpg" class="image-popup"><span
+                                        class="arrow_expand"><fa-icon [icon]="ex"></fa-icon></span></a></li>
                             <li><a href="#"><span class="icon_heart_alt"> <fa-icon [icon]="bag"></fa-icon></span></a>
                             </li>
                         </ul>
                     </div>
                     <div class="product__item__text">
-                        <h6><a href="#">Buttons tweed blazer</a></h6>
+                        <h6><a href="#">{{product.name}}</a></h6>
                         <div class="rating">
                             <i><fa-icon [icon]="star" style="color:goldenrod"></fa-icon>
                                 <fa-icon [icon]="star" style="color:goldenrod"></fa-icon>
@@ -96,171 +97,7 @@
                                 <fa-icon [icon]="star" style="color:goldenrod"></fa-icon>
                                 <fa-icon [icon]="star" style="color:goldenrod"></fa-icon></i>
                         </div>
-                        <div class="product__price">TND 59.0</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 mix men">
-                <div class="product__item">
-                    <div class="product__item__pic set-bg" [ngStyle]="{'background' : 'url(assets/product-2.jpg)'}">
-                        <ul class="product__hover">
-                            <li><a href="assets//product-2.jpg" class="image-popup"><span class="arrow_expand"><fa-icon
-                                            [icon]="ex"></fa-icon></span></a></li>
-                            <li><a href="#"><span class="icon_heart_alt"> <fa-icon [icon]="bag"></fa-icon></span></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="product__item__text">
-                        <h6><a href="#">Flowy striped skirt</a></h6>
-                        <div class="rating">
-                            <i><fa-icon [icon]="star" style="color:goldenrod"></fa-icon>
-                                <fa-icon [icon]="star" style="color:goldenrod"></fa-icon>
-                                <fa-icon [icon]="star" style="color:goldenrod"></fa-icon>
-                                <fa-icon [icon]="star" style="color:goldenrod"></fa-icon>
-                                <fa-icon [icon]="star" style="color:goldenrod"></fa-icon></i>
-                        </div>
-                        <div class="product__price">TND 49.0</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 mix accessories">
-                <div class="product__item">
-                    <div class="product__item__pic set-bg" [ngStyle]="{'background' : 'url(assets/product-3.jpg)'}">
-                        <div class="label stockout">out of stock</div>
-                        <ul class="product__hover">
-                            <li><a href="assets//product-3.jpg" class="image-popup"><span class="arrow_expand"><fa-icon
-                                            [icon]="ex"></fa-icon></span></a></li>
-                            <li><a href="#"><span class="icon_heart_alt"> <fa-icon [icon]="bag"></fa-icon></span></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="product__item__text">
-                        <h6><a href="#">Cotton T-Shirt</a></h6>
-                        <div class="rating">
-                            <i><fa-icon [icon]="star" style="color:goldenrod"></fa-icon>
-                                <fa-icon [icon]="star" style="color:goldenrod"></fa-icon>
-                                <fa-icon [icon]="star" style="color:goldenrod"></fa-icon>
-                                <fa-icon [icon]="star" style="color:goldenrod"></fa-icon>
-                                <fa-icon [icon]="star" style="color:goldenrod"></fa-icon></i>
-                        </div>
-                        <div class="product__price">TND 59.0</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 mix cosmetic">
-                <div class="product__item">
-                    <div class="product__item__pic set-bg" [ngStyle]="{'background' : 'url(assets/product-4.jpg)'}">
-                        <ul class="product__hover">
-                            <li><a href="assets//product-4.jpg" class="image-popup"><span class="arrow_expand"><fa-icon
-                                            [icon]="ex"></fa-icon></span></a></li>
-                            <li><a href="#"><span class="icon_heart_alt"> <fa-icon [icon]="bag"></fa-icon></span></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="product__item__text">
-                        <h6><a href="#">Slim striped pocket shirt</a></h6>
-                        <div class="rating">
-                            <i><fa-icon [icon]="star" style="color:goldenrod"></fa-icon>
-                                <fa-icon [icon]="star" style="color:goldenrod"></fa-icon>
-                                <fa-icon [icon]="star" style="color:goldenrod"></fa-icon>
-                                <fa-icon [icon]="star" style="color:goldenrod"></fa-icon>
-                                <fa-icon [icon]="star" style="color:goldenrod"></fa-icon></i>
-                        </div>
-                        <div class="product__price">TND 59.0</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 mix kid">
-                <div class="product__item">
-                    <div class="product__item__pic set-bg" [ngStyle]="{'background' : 'url(assets/product-5.jpg)'}">
-                        <ul class="product__hover">
-                            <li><a href="assets//product-5.jpg" class="image-popup"><span class="arrow_expand"><fa-icon
-                                            [icon]="ex"></fa-icon></span></a></li>
-                            <li><a href="#"><span class="icon_heart_alt"> <fa-icon [icon]="bag"></fa-icon></span></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="product__item__text">
-                        <h6><a href="#">Fit micro corduroy shirt</a></h6>
-                        <div class="rating">
-                            <i><fa-icon [icon]="star" style="color:goldenrod"></fa-icon>
-                                <fa-icon [icon]="star" style="color:goldenrod"></fa-icon>
-                                <fa-icon [icon]="star" style="color:goldenrod"></fa-icon>
-                                <fa-icon [icon]="star" style="color:goldenrod"></fa-icon>
-                                <fa-icon [icon]="star" style="color:goldenrod"></fa-icon></i>
-                        </div>
-                        <div class="product__price">TND 59.0</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 mix women men kid accessories cosmetic">
-                <div class="product__item sale">
-                    <div class="product__item__pic set-bg" [ngStyle]="{'background' : 'url(assets/product-6.jpg)'}">
-                        <div class="label sale">Sale</div>
-                        <ul class="product__hover">
-                            <li><a href="assets//product-6.jpg" class="image-popup"><span class="arrow_expand"><fa-icon
-                                            [icon]="ex"></fa-icon></span></a></li>
-                            <li><a href="#"><span class="icon_heart_alt"> <fa-icon [icon]="bag"></fa-icon></span></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="product__item__text">
-                        <h6><a href="#">Tropical Kimono</a></h6>
-                        <div class="rating">
-                            <i><fa-icon [icon]="star" style="color:goldenrod"></fa-icon>
-                                <fa-icon [icon]="star" style="color:goldenrod"></fa-icon>
-                                <fa-icon [icon]="star" style="color:goldenrod"></fa-icon>
-                                <fa-icon [icon]="star" style="color:goldenrod"></fa-icon>
-                                <fa-icon [icon]="star" style="color:goldenrod"></fa-icon></i>
-                        </div>
-                        <div class="product__price">TND 49.0 <span>TND 59.0</span></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 mix women men kid accessories cosmetic">
-                <div class="product__item">
-                    <div class="product__item__pic set-bg" [ngStyle]="{'background' : 'url(assets/product-7.jpg)'}">
-                        <ul class="product__hover">
-                            <li><a href="assets//product-7.jpg" class="image-popup"><span class="arrow_expand"><fa-icon
-                                            [icon]="ex"></fa-icon></span></a></li>
-                            <li><a href="#"><span class="icon_heart_alt"> <fa-icon [icon]="bag"></fa-icon></span></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="product__item__text">
-                        <h6><a href="#">Contrasting sunglasses</a></h6>
-                        <div class="rating">
-                            <i><fa-icon [icon]="star" style="color:goldenrod"></fa-icon>
-                                <fa-icon [icon]="star" style="color:goldenrod"></fa-icon>
-                                <fa-icon [icon]="star" style="color:goldenrod"></fa-icon>
-                                <fa-icon [icon]="star" style="color:goldenrod"></fa-icon>
-                                <fa-icon [icon]="star" style="color:goldenrod"></fa-icon></i>
-                        </div>
-                        <div class="product__price">TND 59.0</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 mix women men kid accessories cosmetic">
-                <div class="product__item sale">
-                    <div class="product__item__pic set-bg" [ngStyle]="{'background' : 'url(assets/product-8.jpg)'}">
-                        <div class="label">Sale</div>
-                        <ul class="product__hover">
-                            <li><a href="assets//product-8.jpg" class="image-popup"><span class="arrow_expand"><fa-icon
-                                            [icon]="ex"></fa-icon></span></a></li>
-                            <li><a href="#"><span class="icon_heart_alt"> <fa-icon [icon]="bag"></fa-icon></span></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="product__item__text">
-                        <h6><a href="#">Water resistant backpack</a></h6>
-                        <div class="rating">
-                            <i><fa-icon [icon]="star" style="color:goldenrod"></fa-icon>
-                                <fa-icon [icon]="star" style="color:goldenrod"></fa-icon>
-                                <fa-icon [icon]="star" style="color:goldenrod"></fa-icon>
-                                <fa-icon [icon]="star" style="color:goldenrod"></fa-icon>
-                                <fa-icon [icon]="star" style="color:goldenrod"></fa-icon></i>
-                        </div>
-                        <div class="product__price">TND 49.0 <span>TND 59.0</span></div>
+                        <div class="product__price">TND {{product.price}}</div>
                     </div>
                 </div>
             </div>
@@ -277,35 +114,35 @@
                 <div class="banner__text">
                     <span>The Chloe Collection</span>
                     <h1>The Project Jacket</h1>
-                    <a href="#">Shop now</a>
+                    <a href="/home">Shop now</a>
                 </div>
             </div>
         </div>
     </ng-template>
     <ng-template ngbSlide>
         <div class="picsum-img-wrapper">
-            <img src="assets/banner-1.jpg" alt="Random second slide" />
+            <img src="assets/banner-2.jpg" alt="Random second slide" />
         </div>
         <div class="carousel-caption">
             <div class="banner__item">
                 <div class="banner__text">
                     <span>The Chloe Collection</span>
                     <h1>The Project Jacket</h1>
-                    <a href="#">Shop now</a>
+                    <a href="/home">Shop now</a>
                 </div>
             </div>
         </div>
     </ng-template>
     <ng-template ngbSlide>
         <div class="picsum-img-wrapper">
-            <img src="assets/banner-1.jpg" alt="Random third slide" />
+            <img src="assets/banner-3.jpg" alt="Random third slide" />
         </div>
         <div class="carousel-caption">
             <div class="banner__item">
                 <div class="banner__text">
                     <span>The Chloe Collection</span>
                     <h1>The Project Jacket</h1>
-                    <a href="#">Shop now</a>
+                    <a href="/home">Shop now</a>
                 </div>
             </div>
         </div>

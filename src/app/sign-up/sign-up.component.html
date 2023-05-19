@@ -4,27 +4,25 @@
         <div class="image-holder">
             <img src="assets/sell.jpg" alt="" style="height: 100%;">
         </div>
-        <form action="">
+        <form autocomplete="off" #form="ngForm" name="f">
             <h3>Registration Form</h3>
             <div class="form-group">
-                <input type="text" placeholder="First Name" id="firstname" name="firstname" class="form-control"
-                    required>
-                <input type="text" placeholder="Last Name" class="form-control" id="lastname" name="lastname" required>
+                <input type="text" placeholder="First Name" id="firstname" class="form-control" ngModel name="name"
+                    #name="ngModel">
+                <input type="text" placeholder="Last Name" class="form-control" id="lastname" name="lastname" ngModel
+                    #lastname="ngModel">
             </div>
             <div class="form-wrapper">
-                <input type="password" placeholder="email" class="form-control" id="email" name="email" required>
+                <input type="email" placeholder="email" class="form-control" id="email" name="mail" ngModel
+                    #mail="ngModel">
                 <i class="zmdi zmdi-account"></i>
             </div>
             <div class="form-wrapper">
-                <input type="password" placeholder="Password" class="form-control" id="pass" name="pass" required>
+                <input type="password" placeholder="Password" class="form-control" id="pass" name="pass" ngModel
+                    #pass="ngModel">
                 <i class="zmdi zmdi-lock"></i>
             </div>
-            <div class="form-wrapper">
-                <input type="password" placeholder="Confirm Password" class="form-control" id="pass1" name="pass1"
-                    required>
-                <i class="zmdi zmdi-lock"></i>
-            </div>
-            <button>SignUp
+            <button type="button" (click)="setClient(form)">SignUp
                 <i class="zmdi zmdi-arrow-right"></i>
             </button>
         </form>

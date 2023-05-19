@@ -4,20 +4,23 @@
         <div class="image-holder">
             <img src="assets/sell.jpg" alt="" style="height: 100%;">
         </div>
-        <form>
+        <form autocomplete="off" #form="ngForm" name="f">
             <h3>Login Form</h3>
             <div>
-                <input type="email" placeholder="email" class="form-control" id="email" name="email" required>
+                <input type="text" placeholder="FirstName" class="form-control" id="name" name="name" ngModel
+                    name="name" #name="ngModel">
                 <i class="zmdi zmdi-account"></i>
 
             </div>
             <div>
-                <input type="password" placeholder="Password" class="form-control" id="pass" name="pass" required>
+                <input type="password" placeholder="Password" class="form-control" id="pass" name="lastName" ngModel
+                    name="lastName" #lastName="ngModel">
                 <i class="zmdi zmdi-lock"></i>
 
             </div>
 
-            <button> SignIn
+            <button type="button" (click)="setClient(form)">
+                SignIn
                 <i class="zmdi zmdi-arrow-right"></i>
             </button>
 
