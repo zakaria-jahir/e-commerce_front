@@ -17,7 +17,7 @@ export class PanierComponent implements OnInit {
     this.getProducts()
   }
   getProducts() {
-    this.service.loadLignePanier().subscribe((data: Panier[]) => {
+    this.service.loadLigne().subscribe((data: Panier[]) => {
       this.products = data;
       console.log(this.products)
     },

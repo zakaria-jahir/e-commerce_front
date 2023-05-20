@@ -1,8 +1,8 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Product } from 'src/app/classes/product';
 import { Panier } from 'src/app/classes/panier';
-import { Observable, Subject } from 'rxjs';
+import { Observable, Subject, map } from 'rxjs';
 import { Categorie } from 'src/app/classes/categorie';
 import { Client } from '../classes/Client';
 
@@ -22,8 +22,8 @@ export class ServicesService {
   loadCategory() {
     return this.http.get<Categorie[]>(`${this.url}/viewPanier.php`);
   }
-  loadLignePanier() {
-    return this.http.get<any>(`${this.url}/viewLignePanier.php`);
+  loadLigne() {
+    return this.http.get<any>(`${this.url}/viewLigne.php`);
   }
   public addProduct(p: Product): Observable<Product> {
     return this.http.post<Product>(`${this.url}/addProduct.php`, p);
@@ -33,6 +33,9 @@ export class ServicesService {
   }
   public addUser(p: Client): Observable<Client> {
     return this.http.post<Client>(`${this.url}/createUser.php`, p);
+  }
+  public checkout(p: Client): Observable<Client> {
+    return this.http.post<Client>(`${this.url}/checkout.php`, p);
   }
 
 }

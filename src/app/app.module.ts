@@ -10,8 +10,6 @@ import { HomeComponent } from './home/home.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ContactComponent } from './contact/contact.component';
-import { SignInComponent } from './sign-in/sign-in.component';
-import { SignUpComponent } from './sign-up/sign-up.component';
 import { AdminDashComponent } from './Admin/admin-dash/admin-dash.component';
 import { ProfilComponent } from './Admin/profil/profil.component';
 import { ProductComponent } from './Admin/product/product.component';
@@ -21,8 +19,6 @@ import { AdminNavComponent } from './Admin/admin-nav/admin-nav.component';
 import { AdminNav2Component } from './Admin/admin-nav2/admin-nav2.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { PanierComponent } from './panier/panier.component';
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,8 +27,6 @@ import { PanierComponent } from './panier/panier.component';
     HomeComponent,
     HomeComponent,
     ContactComponent,
-    SignInComponent,
-    SignUpComponent,
     AdminDashComponent,
     ProfilComponent,
     ProductComponent,
