@@ -49,13 +49,13 @@
                                 <input type="text" name="mail" ngModel #mail="ngModel">
                             </div>
                         </div>
-                        <!--
+
                         <div class="col-lg-12">
                             <div class="checkout__form__input">
                                 <p>Oder notes </p>
                                 <input type="text" placeholder="Note about your order, e.g, special noe for delivery">
                             </div>
-                        </div>-->
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-4">
@@ -67,12 +67,14 @@
                                     <span class="top__text">Product</span>
                                     <span class="top__text__right">Total</span>
                                 </li>
-                                <li>01. Chain buck bag <span>0 DT</span></li>
+                                <li *ngFor="let product of products">{{product.name_product}} <span>
+                                        {{product.price}}DT</span>
+                                </li>
                             </ul>
                         </div>
                         <div class="checkout__order__total">
                             <ul>
-                                <li>Total <span>0 DT</span></li>
+                                <li>Total <span>{{ttl}} DT</span></li>
                             </ul>
                         </div>
                         <button type="submit" class="site-btn" (click)="setCheckout(form)">Place oder</button>

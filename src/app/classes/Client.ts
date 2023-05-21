@@ -5,4 +5,5 @@ export class Client {
     mail!: string
     adresse!: string
     phone!: number
+    pass!: string
 }

@@ -1,17 +1,16 @@
-import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { faBagShopping, faExpandAlt, faStar } from '@fortawesome/free-solid-svg-icons';
 import { ServicesService } from '../Services/services.service';
 import { Router } from '@angular/router';
 import { Product } from '../classes/product';
 import { HttpErrorResponse } from '@angular/common/http';
-
-
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-women',
+  templateUrl: './women.component.html',
+  styleUrls: ['./women.component.css']
 })
-export class HomeComponent implements OnInit {
+export class WomenComponent implements OnInit {
+
   bag = faBagShopping
   ex = faExpandAlt
   star = faStar
@@ -40,7 +39,7 @@ export class HomeComponent implements OnInit {
     }
   }
   getProducts() {
-    this.service.loadProducts().subscribe((data: Product[]) => {
+    this.service.loadProductWomen().subscribe((data: Product[]) => {
       this.products = data;
       this.img = this.products[0].pic;
       console.log(this.products)

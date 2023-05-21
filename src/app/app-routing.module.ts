@@ -9,13 +9,17 @@ import { OrderComponent } from './Admin/order/order.component';
 import { ClientComponent } from './Admin/client/client.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { PanierComponent } from './panier/panier.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { SignInComponent } from './sign-in/sign-in.component';
+import { MenComponent } from './men/men.component';
+import { WomenComponent } from './women/women.component';
+import { KidComponent } from './kid/kid.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'women', component: HomeComponent },
-  { path: 'men', component: HomeComponent },
-  { path: 'shop', component: HomeComponent },
+  { path: 'women', component: WomenComponent },
+  { path: 'men', component: MenComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'admin', component: AdminDashComponent },
   { path: 'admin/profil', component: ProfilComponent },
@@ -24,6 +28,9 @@ const routes: Routes = [
   { path: 'admin/client', component: ClientComponent },
   { path: 'client/checkout', component: CheckoutComponent },
   { path: 'client/panier', component: PanierComponent },
+  { path: 'signUp', component: SignUpComponent },
+  { path: 'signIn', component: SignInComponent },
+  { path: 'kid', component: KidComponent }
 
 ];
 

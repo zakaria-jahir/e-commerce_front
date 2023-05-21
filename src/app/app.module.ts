@@ -19,6 +19,11 @@ import { AdminNavComponent } from './Admin/admin-nav/admin-nav.component';
 import { AdminNav2Component } from './Admin/admin-nav2/admin-nav2.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { PanierComponent } from './panier/panier.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { SignInComponent } from './sign-in/sign-in.component';
+import { WomenComponent } from './women/women.component';
+import { MenComponent } from './men/men.component';
+import { KidComponent } from './kid/kid.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +40,12 @@ import { PanierComponent } from './panier/panier.component';
     AdminNavComponent,
     AdminNav2Component,
     CheckoutComponent,
-    PanierComponent
+    PanierComponent,
+    SignUpComponent,
+    SignInComponent,
+    WomenComponent,
+    MenComponent,
+    KidComponent
   ],
   imports: [
     BrowserModule,

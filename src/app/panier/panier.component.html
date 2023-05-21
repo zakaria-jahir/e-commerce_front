@@ -28,11 +28,11 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+                            <tr *ngFor="let product of products">
                                 <td class="cart__product__item">
-                                    <img src="../assets/bs-2.jpg" alt="">
+                                    <img src="assets/images/products/{{product.pic}}" alt="">
                                     <div class="cart__product__item__title">
-                                        <h6>Chain bucket bag</h6>
+                                        <h6>{{product.name_product}}</h6>
                                         <div class="rating">
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
@@ -42,14 +42,23 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td class="cart__price">0 DT</td>
+                                <td class="cart__price">{{product.price}} DT</td>
                                 <td class="cart__quantity">
-                                    <div class="pro-qty">
-                                        <input type="text" value="1">
+                                    <div>
+                                        <div class="quantity-control">
+                                            <button class="quantity-btn increase"
+                                                (click)="updateQuantiteDown(product)">-</button>
+
+                                            <input class="quantity-input" type="number" [(ngModel)]="product.quantite"
+                                                readonly>
+                                            <button class="quantity-btn decrease"
+                                                (click)="updateQuantiteUp(product)">+</button>
+                                        </div>
                                     </div>
                                 </td>
-                                <td class="cart__total">0 DT</td>
-                                <td class="cart__close"><span class="icon_close"></span></td>
+                                <td class="cart__total">{{ product.price * product.quantite }} DT</td>
+                                <td class="cart__close"><span class="icon_close"
+                                        (click)="delete(product.id_product,product.id_panier)"></span></td>
                             </tr>
                         </tbody>
                     </table>
@@ -59,7 +68,7 @@
         <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-6">
                 <div class="cart__btn">
-                    <a href="#">Continue Shopping</a>
+                    <a href="/home">Continue Shopping</a>
                 </div>
             </div>
             <!-- <div class="col-lg-6 col-md-6 col-sm-6">
@@ -70,20 +79,20 @@
         </div>
         <div class="row">
             <div class="col-lg-6">
-                <div class="discount__content">
+                <!--  <div class="discount__content">
                     <h6>Discount codes</h6>
                     <form action="#">
                         <input type="text" placeholder="Enter your coupon code">
                         <button type="submit" class="site-btn">Apply</button>
                     </form>
-                </div>
+                </div>-->
             </div>
             <div class="col-lg-4 offset-lg-2">
                 <div class="cart__total__procced">
                     <h6>Cart total</h6>
                     <ul>
-                        <li>Subtotal <span>0 DT</span></li>
-                        <li>Total <span>0 DT</span></li>
+                        <li>Subtotal <span>{{total}} DT</span></li>
+                        <li>Total <span>{{total}} DT</span></li>
                     </ul>
                     <a href="/client/checkout" class="primary-btn">Proceed to checkout</a>
                 </div>
