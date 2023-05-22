@@ -29,6 +29,7 @@ export class HomeComponent implements OnInit {
 
   naviguer(p: any) {
     this.isloggedin = this.service.isAuthenticated()
+    alert(this.isloggedin)
     if (this.isloggedin) {
       this.createPanier();
       this.id_product = p.id_product;
@@ -53,6 +54,7 @@ export class HomeComponent implements OnInit {
   }
   createPanier() {
     this.service.createPanier(this.service.getId()).subscribe((data: any) => {
+
       console.log(data)
     },
       (error: HttpErrorResponse) => {
