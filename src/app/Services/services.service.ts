@@ -5,6 +5,7 @@ import { Panier } from 'src/app/classes/panier';
 import { BehaviorSubject, Observable, Subject, map } from 'rxjs';
 import { Categorie } from 'src/app/classes/categorie';
 import { Client } from '../classes/Client';
+import { HttpResponse } from '../classes/http-response';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ import { Client } from '../classes/Client';
 export class ServicesService {
   id!: number;
   total!: any;
-  url = 'http://127.0.0.1:8000'
+  url = 'http://127.0.0.1:8081'
   private isUserLoggedIn = new BehaviorSubject(false);
   currentLoginStatus = this.isUserLoggedIn.asObservable();
   private username = new BehaviorSubject('');
@@ -21,6 +22,8 @@ export class ServicesService {
   @Output() getLoggedInName: EventEmitter<any> = new EventEmitter();
   private token: any;
   constructor(private http: HttpClient) { }
+
+  
 
   loadProducts() {
     return this.http.get<Product[]>(`${this.url}/viewProduct.php`);
@@ -40,6 +43,13 @@ export class ServicesService {
     return this.http.get<Product[]>(`${this.url}/viewKid.php`)
   }
   /*-------------------*/
+
+  deleteCategory(id_category: any){
+    return this.http.delete<any>(`${this.url}/deleteCategory.php?id_category=${id_category}`)
+  }
+  deleteProduct(id_product: any){
+    return this.http.delete<any>(`${this.url}/deleteProduct.php?id_product=${id_product}`)
+  }
   /*------------delete product from ligne commande------*/
   deleteProductFromCommande(id_product: any, id_panier: any) {
     return this.http.delete(`${this.url}/deleteFromLigneCommande.php?id_product=` + id_product + `&id_panier=` + id_panier);
@@ -54,6 +64,10 @@ export class ServicesService {
     let data = JSON.stringify(obj);
     return this.http.put(`${this.url}/chargerPanier.php`, data, { headers });
   }/*----------------*/
+  loadOrders(){
+    return this.http.get<Panier[]>(`${this.url}/viewPanier.php`);
+  }
+  
   loadPanier() {
     return this.http.get<Panier[]>(`${this.url}/viewPanier.php`);
   }
@@ -68,12 +82,31 @@ export class ServicesService {
     let data = JSON.stringify(obj);
     return this.http.post(`${this.url}/viewLigne.php`, data, { headers });
   }
+  loadClient(){
+    return this.http.get<Client[]>(`${this.url}/viewClient.php`);
+  }
+  loadTotalClients(){
+    return this.http.get<Client[]>(`${this.url}/totalClient.php`).pipe(map(data => data));
+  }
+  // loadTotalProducts(){
+  //   return this.http.get<Client[]>(`${this.url}/totalProduct.php`);
+  // }
+  // loadTotalOrders(){
+  //   return this.http.get<Client[]>(`${this.url}/viewOrder.php`);
+  // }
   /*------------------------*/
   getTotal() {
     return localStorage.getItem("ttl");
   }
   setTotal(ttl: any) {
     localStorage.setItem("ttl", ttl);
+  }
+  public addCategory(p: any): Observable<any> {
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json'
+    });
+    let data = JSON.stringify(p);
+    return this.http.post(`${this.url}/addCategory.php`, data, { headers });
   }
   /*------------------------*/
   public addProductLigne(id_client: any, id_product: any): Observable<any> {

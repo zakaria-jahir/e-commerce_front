@@ -12,29 +12,24 @@
     
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Products</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Categorys</h1>
+                        <button type="button" class="btn btn-primary" routerLink="/admin/addcategory">Add category</button>
                     </div>
                     <table class="table">
                         <thead>
                           <tr>
-                            <th scope="col">Category</th>
-                            <th scope="col">Product</th>
-                            <th scope="col">Price</th>
-                            <th scope="col">Availability</th>
+                            <th scope="col">Categorys</th>
                             <th scope="col">Edit Categorys</th>
                             <th scope="col">Delete Categorys</th>
                           </tr>
                         </thead>
                         <tbody>
-                          <tr *ngFor="let item of products">
+                          <tr *ngFor="let item of category">
                             <td>{{item.name}}</td>
-                            <td>{{item.name_product}}</td>
-                            <td>{{item.price}} TND</td>
-                            <td>{{item.availability}}</td>
                             <td ><button type="button" class="btn btn-warning">Edit</button></td>
-                            <td><button type="button" class="btn btn-danger" (click)="delete(item.id_product)">Delete</button></td>
+                            <td><button type="button" class="btn btn-danger" (click)="delete(item.id_category)">Delete</button></td>
                           </tr>
-                          
+
                         </tbody>
                       </table>
     

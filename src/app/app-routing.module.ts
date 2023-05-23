@@ -14,6 +14,8 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { MenComponent } from './men/men.component';
 import { WomenComponent } from './women/women.component';
 import { KidComponent } from './kid/kid.component';
+import { CategoryComponent } from './Admin/category/category.component';
+import { AddcategoryComponent } from './Admin/addcategory/addcategory.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -23,6 +25,8 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'admin', component: AdminDashComponent },
   { path: 'admin/profil', component: ProfilComponent },
+  {path: 'admin/category', component: CategoryComponent},
+  {path: 'admin/addcategory', component: AddcategoryComponent},
   { path: 'admin/product', component: ProductComponent },
   { path: 'admin/order', component: OrderComponent },
   { path: 'admin/client', component: ClientComponent },

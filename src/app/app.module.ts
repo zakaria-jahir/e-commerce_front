@@ -24,6 +24,8 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { WomenComponent } from './women/women.component';
 import { MenComponent } from './men/men.component';
 import { KidComponent } from './kid/kid.component';
+import { CategoryComponent } from './Admin/category/category.component';
+import { AddcategoryComponent } from './Admin/addcategory/addcategory.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +47,9 @@ import { KidComponent } from './kid/kid.component';
     SignInComponent,
     WomenComponent,
     MenComponent,
-    KidComponent
+    KidComponent,
+    CategoryComponent,
+    AddcategoryComponent,
   ],
   imports: [
     BrowserModule,

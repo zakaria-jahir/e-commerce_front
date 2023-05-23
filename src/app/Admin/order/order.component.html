@@ -15,7 +15,35 @@
                         <h1 class="h3 mb-0 text-gray-800">Orders</h1>
                     </div>
     
-                    <h1>table</h1>
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">Client name</th>
+                            <th scope="col">Client last name</th>
+                            <th scope="col">Client adresse</th>
+                            <th scope="col">Client phone</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Shipping</th>
+                            <th scope="col">Paimment</th>
+                            <th scope="col">Total</th>
+                            <th scope="col">Delete Order</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let order of orders">
+                            <th scope="col">{{order.name_client}}</th>
+                            <th scope="col">{{order.last_name}}</th>
+                            <th scope="col">{{order.adresse}}</th>
+                            <th scope="col">{{order.phone}}</th>
+                            <th scope="col">{{order.date_creation}}</th>
+                            <th scope="col">{{order.etat_livraison}}</th>
+                            <th scope="col">{{order.etat_paiment}}</th>
+                            <th scope="col">{{order.montant_total}} TND</th>
+                            <td><button type="button" class="btn btn-danger">Delete</button></td>
+                          </tr>
+
+                        </tbody>
+                      </table>
     
                 
     
