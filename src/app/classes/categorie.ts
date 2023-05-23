@@ -1,4 +1,4 @@
 export class Categorie {
-    id_categorie!: number
+    id_category!: number
     name!: string
 }

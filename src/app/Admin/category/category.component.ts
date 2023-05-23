@@ -43,4 +43,7 @@ export class CategoryComponent implements OnInit {
         this.route.navigate(["admin/category"]);
     
   }
+  goToEdit(categorie: any){
+    this.route.navigate(['admin/editcategory',categorie.id_category]);
+  }
 }

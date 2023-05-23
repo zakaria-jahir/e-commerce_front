@@ -1,3 +1,4 @@
 export class HttpResponse {
-    result!: any
+    result!: string;
+    id!:number;
 }

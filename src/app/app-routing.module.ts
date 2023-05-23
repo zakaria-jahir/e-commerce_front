@@ -16,6 +16,9 @@ import { WomenComponent } from './women/women.component';
 import { KidComponent } from './kid/kid.component';
 import { CategoryComponent } from './Admin/category/category.component';
 import { AddcategoryComponent } from './Admin/addcategory/addcategory.component';
+import { EditcategoryComponent } from './Admin/editcategory/editcategory.component';
+import { AddproductComponent } from './Admin/addproduct/addproduct.component';
+import { EditproductComponent } from './Admin/editproduct/editproduct.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -27,7 +30,10 @@ const routes: Routes = [
   { path: 'admin/profil', component: ProfilComponent },
   {path: 'admin/category', component: CategoryComponent},
   {path: 'admin/addcategory', component: AddcategoryComponent},
+  {path: 'admin/editcategory/:id', component: EditcategoryComponent },
   { path: 'admin/product', component: ProductComponent },
+  { path: 'admin/addproduct', component: AddproductComponent},
+  { path: 'admin/editproduct/:id', component: EditproductComponent },
   { path: 'admin/order', component: OrderComponent },
   { path: 'admin/client', component: ClientComponent },
   { path: 'client/checkout', component: CheckoutComponent },

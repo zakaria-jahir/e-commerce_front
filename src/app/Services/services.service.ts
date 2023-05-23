@@ -74,6 +74,9 @@ export class ServicesService {
   loadCategory() {
     return this.http.get<Categorie[]>(`${this.url}/viewCategory.php`);
   }
+  loadCategoryById(id_category: any){
+    return this.http.get<Categorie[]>(`${this.url}/viewCategoryById.php?id_category=`+id_category);
+  }
   loadLigne(id: any): Observable<any> {
     let headers = new HttpHeaders({
       'Content-Type': 'application/json'
@@ -108,6 +111,14 @@ export class ServicesService {
     let data = JSON.stringify(p);
     return this.http.post(`${this.url}/addCategory.php`, data, { headers });
   }
+  public addProduct(p: any): Observable<any> {
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json'
+      });
+      
+      let data = JSON.stringify(p); 
+      return this.http.post(`${this.url}/addProduct.php`, data, { headers });
+      }
   /*------------------------*/
   public addProductLigne(id_client: any, id_product: any): Observable<any> {
     let headers = new HttpHeaders({
@@ -135,6 +146,14 @@ export class ServicesService {
     const obj = { id_panier, id_product, quantite }
     let data = JSON.stringify(obj);
     return this.http.put(`${this.url}/updateQuantite.php`, data, { headers });
+  }
+  updateCategory(category: any){
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json'
+      });
+      const obj = { id_category: category.id_category, name:category.name}
+      let data = JSON.stringify(obj);
+      return this.http.put(`${this.url}/updateCategory.php`, data, { headers });
   }
   /*------------------------*/
   public addUser(p: any): Observable<any> {

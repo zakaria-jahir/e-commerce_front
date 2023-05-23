@@ -26,6 +26,9 @@ import { MenComponent } from './men/men.component';
 import { KidComponent } from './kid/kid.component';
 import { CategoryComponent } from './Admin/category/category.component';
 import { AddcategoryComponent } from './Admin/addcategory/addcategory.component';
+import { EditcategoryComponent } from './Admin/editcategory/editcategory.component';
+import { AddproductComponent } from './Admin/addproduct/addproduct.component';
+import { EditproductComponent } from './Admin/editproduct/editproduct.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,6 +53,9 @@ import { AddcategoryComponent } from './Admin/addcategory/addcategory.component'
     KidComponent,
     CategoryComponent,
     AddcategoryComponent,
+    EditcategoryComponent,
+    AddproductComponent,
+    EditproductComponent,
   ],
   imports: [
     BrowserModule,

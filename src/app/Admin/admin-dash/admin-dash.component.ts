@@ -1,6 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { count } from 'rxjs';
 import { ServicesService } from 'src/app/Services/services.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { ServicesService } from 'src/app/Services/services.service';
   styleUrls: ['./admin-dash.component.css']
 })
 export class AdminDashComponent implements OnInit {
-[x: string]: any;
+
   clientTotla: any
   constructor(private service: ServicesService, private route: Router) { }
 
@@ -18,8 +19,8 @@ export class AdminDashComponent implements OnInit {
   }
   getClientTotal(){
     this.service.loadTotalClients().subscribe((data: any) => {
-      console.log(data)
-      this.clientTotla = data
+      console.log(data.success['nbr']);
+      this.clientTotla = data.success['nbr'];
     },
       (error: HttpErrorResponse) => {
         alert(error.message);

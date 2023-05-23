@@ -24,7 +24,7 @@ export class CheckoutComponent implements OnInit {
     this.service.checkout(f.value).subscribe((data) => {
       console.log(data);
       alert("order successfully")
-      this.option = "we will send you your order in 2 days"
+      this.option = "you will recive your order in 2 days"
     },
       (error: HttpErrorResponse) => {
         alert(error.message);

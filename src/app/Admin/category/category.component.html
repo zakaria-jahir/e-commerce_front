@@ -26,7 +26,7 @@
                         <tbody>
                           <tr *ngFor="let item of category">
                             <td>{{item.name}}</td>
-                            <td ><button type="button" class="btn btn-warning">Edit</button></td>
+                            <td ><button type="button" class="btn btn-warning" (click)="goToEdit(item)">Edit</button></td>
                             <td><button type="button" class="btn btn-danger" (click)="delete(item.id_category)">Delete</button></td>
                           </tr>
 
