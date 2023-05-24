@@ -20,6 +20,7 @@ export class AddproductComponent implements OnInit {
     this.service.addProduct(f.value).subscribe((data: any) => {
       if (data.success) {
         this.route.navigate(['admin/product']);
+        
       } else {
         alert("please enter a product ")
       }

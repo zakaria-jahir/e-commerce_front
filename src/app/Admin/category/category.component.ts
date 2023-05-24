@@ -34,6 +34,10 @@ export class CategoryComponent implements OnInit {
     this.service.deleteCategory(id_category)
       .subscribe((data: any) => {
         this.route.navigate(["admin/category"]);
+        const currentUrl = this.route.url;
+    this.route.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+      this.route.navigateByUrl(currentUrl);
+    });
       },
         (error: HttpErrorResponse) => {
           alert(error.message);

@@ -33,7 +33,11 @@ export class ProductComponent implements OnInit {
   delete(id_product: any) {
     this.service.deleteProduct(id_product)
       .subscribe((data: any) => {
-        this.route.navigate(["/admin/product"]);
+        // this.route.navigate(["/admin/product"]);
+        const currentUrl = this.route.url;
+    this.route.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+      this.route.navigateByUrl(currentUrl);
+    });
       },
         (error: HttpErrorResponse) => {
           alert(error.message);

@@ -56,11 +56,11 @@ export class ServicesService {
   }
   /*----------------*/
   /*-------chargerPanier------------ */
-  public chargerPanier(id_panier: any,montant_total:any) {
+  public chargerPanier(id_client: any,montant_total:any) {
     let headers = new HttpHeaders({
       'Content-Type': 'application/json'
     });
-    const obj = { id_panier,montant_total }
+    const obj = { id_client,montant_total }
     let data = JSON.stringify(obj);
     return this.http.put(`${this.url}/chargerPanier.php`, data, { headers });
   }/*----------------*/
@@ -176,7 +176,7 @@ export class ServicesService {
   }
   /*-------------------------*/
   public checkout(p: Client): Observable<Client> {
-    return this.http.post<Client>(`${this.url}/checkout.php`, p);
+    return this.http.put<Client>(`${this.url}/checkout.php`, p);
   }
   /*-----------------------------*/
   isAuthenticated(): boolean {
@@ -230,5 +230,11 @@ export class ServicesService {
         }
       );
     });
+  }
+  setPass(pass: any) {
+    localStorage.setItem('pass', pass)
+  }
+  getPass() {
+    return localStorage.getItem('pass')
   }
 }

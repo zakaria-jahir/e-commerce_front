@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit {
 
   naviguer(p: any) {
     this.isloggedin = this.service.isAuthenticated()
-    alert(this.isloggedin)
+    // alert(this.isloggedin)
     if (this.isloggedin) {
       this.createPanier();
       this.id_product = p.id_product;

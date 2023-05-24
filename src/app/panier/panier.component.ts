@@ -63,10 +63,28 @@ export class PanierComponent implements OnInit {
     this.service.setTotal(this.total)
   }
   /***********delete---------- */
+  // delete(id_product: any, id_panier: any) {
+  //   this.service.deleteProductFromCommande(id_product, id_panier)
+  //     .subscribe((data: any) => {
+  //       this.getProducts()
+  //     },
+  //       (error: HttpErrorResponse) => {
+  //         alert(error.message);
+  //         console.log("erreur");
+  //       });
+  // }
   delete(id_product: any, id_panier: any) {
     this.service.deleteProductFromCommande(id_product, id_panier)
       .subscribe((data: any) => {
-        this.getProducts()
+        this.service.loadLigne(this.service.getId()).subscribe((data: any) => {
+          this.products = data.data;
+          if (this.products == null) {
+            this.total = 0
+          } else {
+            this.calculateTotal()
+          }
+        })
+
       },
         (error: HttpErrorResponse) => {
           alert(error.message);

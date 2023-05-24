@@ -40,7 +40,7 @@
                         <div class="col-lg-6 col-md-6 col-sm-6">
                             <div class="checkout__form__input">
                                 <p>Phone <span>*</span></p>
-                                <input type="text" name="phone" ngModel #phone="ngModel">
+                                <input type="number" name="phone" ngModel #phone="ngModel">
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6">
@@ -52,8 +52,9 @@
 
                         <div class="col-lg-12">
                             <div class="checkout__form__input">
-                                <p>Oder notes </p>
-                                <input type="text" placeholder="Note about your order, e.g, special noe for delivery">
+                                <p *ngIf="check" style="background:red;color:white;">{{option}} </p>
+                                <!-- <input type="text" placeholder="Note about your order, e.g, special noe for delivery"> -->
+
                             </div>
                         </div>
                     </div>
