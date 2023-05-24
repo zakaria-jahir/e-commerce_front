@@ -42,5 +42,8 @@ export class ProductComponent implements OnInit {
         });
         this.route.navigate(["/admin/product"]);
   }
+  goToEdit(product: any){
+    this.route.navigate(['admin/editproduct',product.id_product]);
+  }
 
 }

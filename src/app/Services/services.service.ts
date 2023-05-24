@@ -77,6 +77,9 @@ export class ServicesService {
   loadCategoryById(id_category: any){
     return this.http.get<Categorie[]>(`${this.url}/viewCategoryById.php?id_category=`+id_category);
   }
+  loadProductById(id_product: any){
+    return this.http.get<Product[]>(`${this.url}/viewProductById.php?id_product=`+id_product);
+  }
   loadLigne(id: any): Observable<any> {
     let headers = new HttpHeaders({
       'Content-Type': 'application/json'
@@ -91,12 +94,12 @@ export class ServicesService {
   loadTotalClients(){
     return this.http.get<Client[]>(`${this.url}/totalClient.php`).pipe(map(data => data));
   }
-  // loadTotalProducts(){
-  //   return this.http.get<Client[]>(`${this.url}/totalProduct.php`);
-  // }
-  // loadTotalOrders(){
-  //   return this.http.get<Client[]>(`${this.url}/viewOrder.php`);
-  // }
+  loadTotalProduct(){
+    return this.http.get<Product[]>(`${this.url}/totalProduct.php`).pipe(map(data => data));
+  }
+  loadTotalOrders(){
+    return this.http.get<Panier[]>(`${this.url}/totalOrder.php`).pipe(map(data => data));
+  }
   /*------------------------*/
   getTotal() {
     return localStorage.getItem("ttl");
@@ -154,6 +157,14 @@ export class ServicesService {
       const obj = { id_category: category.id_category, name:category.name}
       let data = JSON.stringify(obj);
       return this.http.put(`${this.url}/updateCategory.php`, data, { headers });
+  }
+  updateProduct(product: any){
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json'
+      });
+      const obj = { id_product: product.id_product, id_category:product.id_category,name_product:product.name_product,description:product.description,price:product.price,availability:product.availability}
+      let data = JSON.stringify(obj);
+      return this.http.put(`${this.url}/updateProduct.php`, data, { headers });
   }
   /*------------------------*/
   public addUser(p: any): Observable<any> {

@@ -1,1 +1,35 @@
-<p>editproduct works!</p>
+<div id="wrapper">
+    <app-admin-nav></app-admin-nav>
+        <div id="content-wrapper" class="d-flex flex-column">
+    
+            <!-- Main Content -->
+            <div id="content">
+    
+            <app-admin-nav2></app-admin-nav2>
+    
+                <!-- Begin Page Content -->
+                
+                <div class="container-fluid">
+                    <form autocomplete="off" #form="ngForm" name="f">
+                        <h3 style=" margin-left:20%  ;" class="mb-3">Edit product</h3>
+                        <div class="form-group" style="width: 30%; margin-left:20% ;">
+                            <input type="number" placeholder="id_product" id="id_product" class="form-control mb-3" name="id_product"
+                                  [(ngModel)]="product.id_product" value="{{product.id_product}}" readonly>
+                                  <input type="number" placeholder="id_category" id="id_category" class="form-control mb-3" name="id_category"
+                                  [(ngModel)]="product.id_category" value="{{product.id_category}}">
+                                  <input type="text" placeholder="name_product" id="name_product" class="form-control mb-3" name="name_product"
+                                  [(ngModel)]="product.name_product" value="{{product.name_product}}">
+                                  <input type="text" placeholder="description" id="description" class="form-control mb-3" name="description"
+                                  [(ngModel)]="product.description" value="{{product.description}}">
+                                  <input type="number" placeholder="price" id="price" class="form-control mb-3" name="price"
+                                  [(ngModel)]="product.price" value="{{product.price}}">
+                            <input type="text" placeholder="availability" id="availability" class="form-control" name="availability"
+                            [(ngModel)]="product.availability" value="{{product.availability}}">
+                        </div>
+                        <button type="button" class="btn btn-warning " style="margin-left:33% ;" (click)="updateProduct(form)" >Edit</button>
+                    </form>
+                   
+                </div>
+            </div>
+        </div>
+    </div>

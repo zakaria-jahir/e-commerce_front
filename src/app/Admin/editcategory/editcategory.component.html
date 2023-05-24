@@ -10,24 +10,11 @@
     
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-                    <!-- <form autocomplete="off" #form="ngForm" >
-                        <h3 style=" margin-left:20% ;">Edit Categorys</h3>
-                         <h1 *ngFor="let item of category">{{item.id_category}}</h1> 
-                        <div class="form-group" style="width: 30%; margin-left:20% ;">
-                            <input type="text" placeholder="id" id="id_category" class="form-control" name="id_category"
-                            ngModel #id_category="ngModel"  readonly>
-                            value="{{category.id_category}}" 
-                            <input type="text" placeholder="category" id="name" class="form-control" name="name"
-                                ngModel #name="ngModel" >
-                                value="{{category.name}}" 
-                        </div>
-                        <button type="button" class="btn btn-warning " style="margin-left:33% ;" (click)="updateCategory(form)">Edit</button>
-                    </form> -->
                     <form autocomplete="off" #form="ngForm" name="f">
                         <h3 style=" margin-left:20%  ;" class="mb-3">Edit Categorys</h3>
                         <div class="form-group" style="width: 30%; margin-left:20% ;">
                             <input type="text" placeholder="category" id="category" class="form-control mb-3" name="id_category"
-                                  [(ngModel)]="category.id_category" value="{{category.id_category}}">
+                                  [(ngModel)]="category.id_category" value="{{category.id_category}}" readonly>
                             <input type="text" placeholder="category" id="category" class="form-control" name="name"
                             [(ngModel)]="category.name" value="{{category.name}}">
                         </div>

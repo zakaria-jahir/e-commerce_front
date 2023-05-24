@@ -32,7 +32,7 @@
                             <td>{{item.name_product}}</td>
                             <td>{{item.price}} TND</td>
                             <td>{{item.availability}}</td>
-                            <td ><button type="button" class="btn btn-warning">Edit</button></td>
+                            <td ><button type="button" class="btn btn-warning" (click)="goToEdit(item)">Edit</button></td>
                             <td><button type="button" class="btn btn-danger" (click)="delete(item.id_product)">Delete</button></td>
                           </tr>
                           
